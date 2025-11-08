@@ -1,0 +1,76 @@
+{% extends 'idor/index.html' %}
+{% block content %}
+<div class="student-profile">
+    <div class="text-center mb-5">
+        <div class="student-avatar mb-3">
+            <i class="bi bi-person-circle display-1 text-primary"></i>
+        </div>
+        <h1 class="display-5 fw-bold text-dark mb-2">
+            {{ student.first_name }} {{ student.last_name }}
+        </h1>
+        <p class="text-muted">Student Profile</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-custom border-0">
+                <div class="card-body p-4">
+                    <div class="student-info mb-4">
+                        <h5 class="card-title mb-3">
+                            <i class="bi bi-info-circle me-2 text-primary"></i>
+                            Basic Information
+                        </h5>
+                        <div class="info-item mb-2">
+                            <strong class="text-dark">First Name:</strong>
+                            <span class="ms-2">{{ student.first_name }}</span>
+                        </div>
+                        <div class="info-item">
+                            <strong class="text-dark">Last Name:</strong>
+                            <span class="ms-2">{{ student.last_name }}</span>
+                        </div>
+                    </div>
+
+                    <div class="secret-section">
+                        <h5 class="card-title mb-3">
+                            <i class="bi bi-shield-lock me-2 text-warning"></i>
+                            Confidential Data
+                        </h5>
+                        <div class="alert alert-warning border-0">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                <strong>Secret Value:</strong>
+                            </div>
+                            <p class="mb-0 mt-2 text-dark">{{ student.secret_value }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.student-profile {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.student-avatar {
+    color: #667eea;
+}
+
+.info-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.alert-warning {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+}
+</style>
+{% endblock %}
